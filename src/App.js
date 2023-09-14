@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -9,17 +9,19 @@ import Menu from './components/Menu';
 
 // App Component (Parent Component)
 function App() {
+  const [selectedButton, setSelectedButton] =  useState(null);
+  const [selectedImage, setSelectedImage] = useState(null);
   return (
     <div className="App">
-      <Menu />
+      <Menu setSelectedButton={setSelectedButton} setSelectedImage={setSelectedImage} />
       <div className="sidebar-container">
-        <div className="col-3 col-sm-3 left-sidebar">
-          <LeftSidebar  />
+        <div className="col-3 col-sm-2 left-sidebar">
+        <LeftSidebar selectedButton={selectedButton} selectedImage={selectedImage} />
         </div>
-        <div className="col-5 col-sm-3 right-sidebar">
+        <div className="col-5 col-sm-2 right-sidebar">
           <RightSidebar  />
         </div>
-        <div className="col-10 col-sm-6 main-content">
+        <div className="col-10 col-sm-8 main-content">
           <MainContent  />
         </div>
       </div>

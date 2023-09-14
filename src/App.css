@@ -21,6 +21,9 @@
   padding: 20px;
   overflow-y: scroll;
 }
+.image-container {
+  z-index: 1;
+}
 
 .main-content {
   background-color: white;
