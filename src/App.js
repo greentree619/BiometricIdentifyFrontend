@@ -16,13 +16,13 @@ function App() {
       <Menu setSelectedButton={setSelectedButton} setSelectedImage={setSelectedImage} />
       <div className="sidebar-container">
         <div className="col-3 col-sm-2 left-sidebar">
-        <LeftSidebar selectedButton={selectedButton} selectedImage={selectedImage} />
+        <LeftSidebar selectedButton={selectedButton} selectedImage={selectedImage} setSelectedImage={setSelectedImage}/>
         </div>
         <div className="col-5 col-sm-2 right-sidebar">
           <RightSidebar  />
         </div>
         <div className="col-10 col-sm-8 main-content">
-          <MainContent  />
+          <MainContent  selectedImage={selectedImage}/>
         </div>
       </div>
     </div>

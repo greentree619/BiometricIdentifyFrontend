@@ -22,7 +22,7 @@ const imageHeight = '120px'; // Change to your preferred height
   //     .catch(error => console.log('error', error));
   // }
 
-const LeftSidebar = ({selectedButton, selectedImage}) => {
+const LeftSidebar = ({selectedButton, selectedImage, setSelectedImage}) => {
 
   const getImageForButton = () => {
     if (selectedButton === 'upload' && selectedImage) {
@@ -36,7 +36,7 @@ const LeftSidebar = ({selectedButton, selectedImage}) => {
     } else if (selectedButton === 'fingerSamples') {
       return (
         <>
-          <FetchAndDisplayImage />
+          <FetchAndDisplayImage selectedImage={selectedImage} setSelectedImage={setSelectedImage}/>
         </>
       );
     } else if (selectedButton === 'irisSamples') {

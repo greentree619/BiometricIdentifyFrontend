@@ -1,10 +1,17 @@
-// src/components/MainContent.js
 import React from 'react';
 
-const MainContent = () => {
+function MainContent({ selectedImage }) {
   return (
-     <p> Main Content</p>
+    <div className="maincontent">
+      {selectedImage && (
+        <img
+          src={selectedImage}
+          alt="Selected Image"
+          style={{ maxWidth: '100%', height: 'auto' }}
+        />
+      )}
+    </div>
   );
-};
+}
 
 export default MainContent;
